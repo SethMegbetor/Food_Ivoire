@@ -27,69 +27,83 @@ class MyHomePage extends StatelessWidget {
   Widget build(BuildContext context) {
     return Scaffold(
       body: Stack(
+        alignment: Alignment.center,
         children: [
-          // Background image
           Container(
             decoration: BoxDecoration(
               image: DecorationImage(
-                image: AssetImage(
-                  'assets/get_started_background.jpg',
-                ),
-                opacity: 0.9,
+                image: AssetImage('assets/get_started_background.jpg'),
                 fit: BoxFit.cover,
               ),
-              // color: Colors.green,
             ),
           ),
-          // Content
-          Center(
-            child: Column(
-              mainAxisAlignment: MainAxisAlignment.center,
-              children: [
-                Text(
-                  'Food  Ivoire',
-                  style: TextStyle(
-                    fontSize: 24,
-                    fontWeight: FontWeight.bold,
-                    color: const Color.fromARGB(255, 104, 15, 15),
-                  ),
-                ),
-                SizedBox(height: 20),
-                ElevatedButton(
-                  onPressed: () {
-                    // Perform action when the "Get Started" button is pressed
-                    // For example, you can navigate to another screen
-                    Navigator.push(
-                      context,
-                      MaterialPageRoute(
-                        builder: (context) => LoginOrSignupPage(),
-                      ),
-                    );
-                  },
-                  child: Text(
-                    'Get Started',
-                    style: TextStyle(color: Colors.black),
-                  ),
-                ),
-              ],
+          Opacity(
+            opacity: 0.7,
+            child: Container(
+              color: Colors.black,
             ),
+          ),
+          Column(
+            mainAxisAlignment: MainAxisAlignment.center,
+            children: [
+              Container(
+                width: 150,
+                height: 150,
+                decoration: BoxDecoration(
+                  shape: BoxShape.circle,
+                  border: Border.all(
+                    color: Colors.green,
+                    width: 2,
+                  ),
+                ),
+                child: ClipOval(
+                  child: Image.asset(
+                    'assets/login_or_signup.jpg',
+                    fit: BoxFit.cover,
+                  ),
+                ),
+              ),
+              SizedBox(height: 20),
+              Text(
+                "Food  Ivoire",
+                textAlign: TextAlign.center,
+                style: TextStyle(
+                  fontSize: 24,
+                  color: Colors.white,
+                ),
+              ),
+              SizedBox(height: 20),
+              Text(
+                "Bienvenue sur notre application dédiée à la promotion de la gastronomie ivoirienne pendant la CAN ! Découvrez les meilleurs plats locaux, trouvez des restaurants à proximité et partagez vos avis. Profitez de l'expérience culinaire de la Côte d'Ivoire. Bon appétit et vivez la passion gastronomique ivoirienne avec nous !",
+                textAlign: TextAlign.center,
+                style: TextStyle(
+                  fontSize: 18,
+                  color: Colors.white,
+                ),
+              ),
+              SizedBox(height: 20),
+              ElevatedButton(
+                onPressed: () {
+                  Navigator.push(
+                    context,
+                    MaterialPageRoute(
+                      builder: (context) => LoginOrSignupPage(),
+                    ),
+                  );
+                },
+                style: ElevatedButton.styleFrom(
+                  foregroundColor: Colors.white,
+                  backgroundColor: Color(0xFFE5800A),
+                ),
+                child: Text(
+                  'Get Started',
+                  style: TextStyle(color: Colors.white),
+                ),
+              ),
+            ],
           ),
         ],
       ),
     );
   }
 }
-
-// class SecondPage extends StatelessWidget {
-//   @override
-//   Widget build(BuildContext context) {
-//     return Scaffold(
-//       appBar: AppBar(
-//         title: Text('Second Page'),
-//       ),
-//       body: Center(
-//         child: Text('This is the second page'),
-//       ),
-//     );
-//   }
-// }
