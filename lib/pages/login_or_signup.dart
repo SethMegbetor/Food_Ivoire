@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:food_ivoire/pages/signup_telephone.dart';
 
 import 'login.dart';
 
@@ -48,7 +49,7 @@ class LoginOrSignupPage extends StatelessWidget {
                   Navigator.push(
                     context,
                     MaterialPageRoute(
-                      builder: (context) => LoginPage(),
+                      builder: (context) => SignupTelephonePage(),
                     ),
                   );
                 },
