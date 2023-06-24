@@ -4,7 +4,7 @@ import 'dart:async';
 
 import 'package:flutter/material.dart';
 
-import 'personal_details.dart';
+import 'signup_page.dart';
 
 class OTPBox extends StatelessWidget {
   final TextEditingController controller;
@@ -154,7 +154,7 @@ class _SignupStepTwoPageState extends State<SignupStepTwoPage> {
                       Navigator.push(
                     context,
                     MaterialPageRoute(
-                      builder: (context) => SetupAccountPage(),
+                      builder: (context) => SignupPage(),
                     ),
                   );
                 },
