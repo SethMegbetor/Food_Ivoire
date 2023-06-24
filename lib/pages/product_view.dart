@@ -79,7 +79,7 @@ class _ProductViewPageState extends State<ProductViewPage> {
           Container(
               height: MediaQuery.of(context).size.height * 0.55,
               color: Colors.white,
-              padding: EdgeInsets.symmetric(horizontal: 20, vertical: 5),
+              padding: EdgeInsets.symmetric(horizontal: 20, vertical: 10),
               child: Column(
                 crossAxisAlignment: CrossAxisAlignment.start,
                 children: [

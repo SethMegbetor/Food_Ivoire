@@ -397,7 +397,7 @@ class _CartPageState extends State<CartPage> with TickerProviderStateMixin {
           FadeAnimation(
             1.4,
             Padding(
-              padding: EdgeInsets.all(20.0),
+              padding: EdgeInsets.all(10.0),
               child: MaterialButton(
                 onPressed: () {
                   Navigator.push(context,

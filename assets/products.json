@@ -3,25 +3,25 @@
     {
       "name": "Dzenkple",
       "imageURL": "https://img.theculturetrip.com/1440x807/smart/wp-content/uploads/2022/01/jgttd6_-the-picture-pantry-_-alamy-stock-photo.jpg",
-      "brand": "OSIRUS",
+      "brand": "Ghana",
       "price": 100
     },
     {
       "name": "Fufu",
       "imageURL": "https://images.unsplash.com/photo-1611712142269-12b7433e28e9?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8NXx8YWZyaWNhbiUyMGZvb2R8ZW58MHx8MHx8fDA%3D&auto=format&fit=crop&w=900&q=60",
-      "brand": "OSIRUS",
+      "brand": "Nigeria",
       "price": 49
     },
     {
       "name": "Agushi Stew",
       "imageURL": "https://images.unsplash.com/photo-1534939561126-855b8675edd7?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=987&q=80",
-      "brand": "OSIRUS",
+      "brand": "Chad",
       "price": 58
     },
     {
       "name": "Ampesie",
       "imageURL": "https://images.unsplash.com/photo-1541518763669-27fef04b14ea?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1933&q=80",
-      "brand": "OSIRUS",
+      "brand": "South Africa",
       "price": 69
     }
   ]
