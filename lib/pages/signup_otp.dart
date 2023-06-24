@@ -1,154 +1,10 @@
-// import 'dart:async';
-
-// import 'package:flutter/material.dart';
-
-// class SignupStepTwoPage extends StatefulWidget {
-//   final String phoneNumber;
-
-//   SignupStepTwoPage({required this.phoneNumber});
-
-//   @override
-//   _SignupStepTwoPageState createState() => _SignupStepTwoPageState();
-// }
-
-// class _SignupStepTwoPageState extends State<SignupStepTwoPage> {
-//   int countdown = 120;
-//   bool isResendActive = false;
-
-//   @override
-//   void initState() {
-//     startCountdown();
-//     super.initState();
-//   }
-
-//   void startCountdown() {
-//     setState(() {
-//       countdown = 120;
-//       isResendActive = false;
-//     });
-
-//     Timer.periodic(Duration(seconds: 1), (timer) {
-//       if (countdown > 0) {
-//         setState(() {
-//           countdown--;
-//         });
-//       } else {
-//         setState(() {
-//           isResendActive = true;
-//         });
-//         timer.cancel();
-//       }
-//     });
-//   }
-
-//   @override
-//   Widget build(BuildContext context) {
-//     return Scaffold(
-//       backgroundColor: Color(0xFFFEFDF5),
-//       appBar: AppBar(
-//         title: Text('Signup Step 2'),
-//       ),
-//       body: Center(
-//         child: Padding(
-//           padding: const EdgeInsets.all(16.0),
-//           child: Column(
-//             crossAxisAlignment: CrossAxisAlignment.start,
-//             children: [
-//               Center(
-//                 child: Text(
-//                   'Signup Step 2',
-//                   style: TextStyle(
-//                     fontSize: 24,
-//                     fontWeight: FontWeight.bold,
-//                   ),
-//                 ),
-//               ),
-//               SizedBox(height: 10),
-//               Center(
-//                 child: Text(
-//                   'Enter the OTP sent to:',
-//                   style: TextStyle(
-//                     fontSize: 16,
-//                   ),
-//                 ),
-//               ),
-//               SizedBox(height: 5),
-//               Center(
-//                 child: Text(
-//                   widget.phoneNumber,
-//                   style: TextStyle(
-//                     fontSize: 16,
-//                     fontWeight: FontWeight.bold,
-//                   ),
-//                 ),
-//               ),
-//               SizedBox(height: 20),
-//               TextField(
-//                 decoration: InputDecoration(
-//                   hintText: 'OTP Confirmation',
-//                 ),
-//               ),
-//               SizedBox(height: 20),
-//               ElevatedButton(
-//                 onPressed: () {
-//                   // Perform submit action
-//                 },
-//                 style: ElevatedButton.styleFrom(
-//                   primary: Colors.green,
-//                   minimumSize: Size(double.infinity, 50),
-//                   shape: RoundedRectangleBorder(
-//                     borderRadius: BorderRadius.circular(10),
-//                   ),
-//                 ),
-//                 child: Text(
-//                   'Submit',
-//                   style: TextStyle(
-//                     color: Colors.white,
-//                     fontSize: 18,
-//                   ),
-//                 ),
-//               ),
-//               SizedBox(height: 10),
-//               isResendActive
-//                   ? ElevatedButton(
-//                       onPressed: () {
-//                         // Perform resend action
-//                         startCountdown();
-//                       },
-//                       style: ElevatedButton.styleFrom(
-//                         primary: Colors.grey,
-//                         minimumSize: Size(double.infinity, 50),
-//                         shape: RoundedRectangleBorder(
-//                           borderRadius: BorderRadius.circular(10),
-//                         ),
-//                       ),
-//                       child: Text(
-//                         'Resend',
-//                         style: TextStyle(
-//                           color: Colors.white,
-//                           fontSize: 18,
-//                         ),
-//                       ),
-//                     )
-//                   : Text(
-//                       'Resend OTP in ${countdown.toString()} seconds',
-//                       style: TextStyle(
-//                         fontSize: 16,
-//                         color: Colors.grey,
-//                       ),
-//                     ),
-//             ],
-//           ),
-//         ),
-//       ),
-//     );
-//   }
-// }
 
 
 import 'dart:async';
 
 import 'package:flutter/material.dart';
+
+import 'personal_details.dart';
 
 class OTPBox extends StatelessWidget {
   final TextEditingController controller;
@@ -295,6 +151,12 @@ class _SignupStepTwoPageState extends State<SignupStepTwoPage> {
               ElevatedButton(
                 onPressed: () {
                   // Perform submit action
+                      Navigator.push(
+                    context,
+                    MaterialPageRoute(
+                      builder: (context) => SetupAccountPage(),
+                    ),
+                  );
                 },
                 style: ElevatedButton.styleFrom(
                   primary: Colors.green,
@@ -304,7 +166,7 @@ class _SignupStepTwoPageState extends State<SignupStepTwoPage> {
                   ),
                 ),
                 child: Text(
-                  'Submit',
+                  'Done',
                   style: TextStyle(
                     color: Colors.white,
                     fontSize: 18,
