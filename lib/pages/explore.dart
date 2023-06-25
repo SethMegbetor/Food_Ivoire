@@ -65,34 +65,35 @@ class _ExplorePageState extends State<ExplorePage>
     return CustomScrollView(controller: _scrollController, slivers: [
       SliverAppBar(
         // expandedHeight: 300.0,
-        expandedHeight: 250.0,
+        expandedHeight: 0.0,
         elevation: 0,
         pinned: true,
         floating: true,
         stretch: true,
         backgroundColor: Colors.grey.shade50,
-        flexibleSpace: FlexibleSpaceBar(
-            collapseMode: CollapseMode.pin,
-            titlePadding: EdgeInsets.only(left: 20, right: 30, bottom: 100),
-            stretchModes: [
-              StretchMode.zoomBackground,
-              // StretchMode.fadeTitle
-            ],
-            title: AnimatedOpacity(
-              opacity: _isScrolled ? 0.0 : 1.0,
-              duration: Duration(milliseconds: 500),
-              child: FadeAnimation(
-                  1,
-                  Text("Find the best local Ivorian Foods",
-                      style: TextStyle(
-                        color: Colors.black,
-                        fontSize: 18.0,
-                      ))),
-            ),
-            background: Image.asset(
-              "assets/images/background.png",
-              fit: BoxFit.cover,
-            )),
+        // flexibleSpace: FlexibleSpaceBar(
+        //   collapseMode: CollapseMode.pin,
+        //   titlePadding: EdgeInsets.only(left: 20, right: 30, bottom: 100),
+        //   stretchModes: [
+        //     StretchMode.zoomBackground,
+        //     // StretchMode.fadeTitle
+        //   ],
+        //   title: AnimatedOpacity(
+        //     opacity: _isScrolled ? 0.0 : 1.0,
+        //     duration: Duration(milliseconds: 500),
+        //     child: FadeAnimation(
+        //         1,
+        //         Text("Find the best local Ivorian Foods",
+        //             style: TextStyle(
+        //               color: Colors.black,
+        //               fontSize: 18.0,
+        //             ))),
+        //   ),
+        //   background: Image.asset(
+        //     "assets/images/background.png",
+        //     fit: BoxFit.cover,
+        //   ),
+        // ),
         bottom: AppBar(
           toolbarHeight: 70,
           elevation: 0,
