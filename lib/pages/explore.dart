@@ -267,7 +267,7 @@ class _ExplorePageState extends State<ExplorePage>
                   mainAxisAlignment: MainAxisAlignment.spaceBetween,
                   children: [
                     Text(
-                      'Cotton Collection',
+                      'Ivorian Special',
                       style: TextStyle(
                           color: Colors.black,
                           fontSize: 18,
