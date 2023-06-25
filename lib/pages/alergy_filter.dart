@@ -14,18 +14,18 @@ class Alergy extends StatelessWidget {
     return MaterialApp(
       title: 'Allergy Filter',
       home: Scaffold(
-        appBar: AppBar(
+        appBar: AppBar(backgroundColor: Color.fromARGB(255, 8, 185, 100),
           title: Text("What are you allergic to"),
         ),
         body: FilterWidget(onOptionsSelected: handleSelectedOptions),
-        floatingActionButton: FloatingActionButton(
+        floatingActionButton: FloatingActionButton(backgroundColor: Colors.orange,
           onPressed: () {
             Navigator.push(
               context,
               MaterialPageRoute(builder: (context) => HomePage()),
             );
           },
-          child: Icon(Icons.done),
+          child: Icon(Icons.done, color: Colors.white),
         ),
       ),
     );
