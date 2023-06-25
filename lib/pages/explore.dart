@@ -18,6 +18,7 @@ class ExplorePage extends StatefulWidget {
 class _ExplorePageState extends State<ExplorePage>
     with TickerProviderStateMixin {
   late ScrollController _scrollController;
+
   bool _isScrolled = false;
 
   List<dynamic> productList = [];
@@ -61,6 +62,9 @@ class _ExplorePageState extends State<ExplorePage>
       });
     }
   }
+
+  bool isButton1Clicked = false;
+  bool isButton2Clicked = false;
 
   @override
   Widget build(BuildContext context) {
@@ -498,7 +502,7 @@ class _ExplorePageState extends State<ExplorePage>
         return StatefulBuilder(builder: (context, setState) {
           return Container(
             padding: EdgeInsets.only(top: 20, left: 20, right: 20, bottom: 20),
-            height: MediaQuery.of(context).size.height * 0.8,
+            height: MediaQuery.of(context).size.height * 0.9,
             child: Column(
               crossAxisAlignment: CrossAxisAlignment.start,
               children: [
@@ -534,52 +538,85 @@ class _ExplorePageState extends State<ExplorePage>
                   height: 20,
                 ),
                 Text(
-                  "Color",
+                  "Location",
                   style: TextStyle(fontWeight: FontWeight.bold, fontSize: 20),
                 ),
                 SizedBox(
                   height: 10,
                 ),
                 Container(
-                  height: 60,
-                  child: ListView.builder(
-                    scrollDirection: Axis.horizontal,
-                    itemCount: colors.length,
-                    itemBuilder: (context, index) {
-                      return GestureDetector(
-                        onTap: () {
-                          setState(() {
-                            _selectedColor = index;
-                          });
-                        },
-                        child: AnimatedContainer(
-                          duration: Duration(milliseconds: 300),
-                          margin: EdgeInsets.only(right: 10),
-                          decoration: BoxDecoration(
-                              color: _selectedColor == index
-                                  ? colors[index]
-                                  : colors[index].withOpacity(0.5),
-                              shape: BoxShape.circle),
-                          width: 40,
-                          height: 40,
-                          child: Center(
-                            child: _selectedColor == index
-                                ? Icon(
-                                    Icons.check,
-                                    color: Colors.white,
-                                  )
-                                : Container(),
+                  child: Row(
+                    children: [
+                      Expanded(
+                        child: ElevatedButton(
+                          onPressed: () {
+                            setState(() {
+                              isButton1Clicked = !isButton1Clicked;
+                            });
+                          },
+                          style: ElevatedButton.styleFrom(
+                            primary: isButton1Clicked ? Colors.green : null,
                           ),
+                          child: Text('Abidjan'),
                         ),
-                      );
-                    },
+                      ),
+                      SizedBox(width: 10.0), // Add spacing between the buttons
+                      Expanded(
+                        child: ElevatedButton(
+                          onPressed: () {
+                            setState(() {
+                              isButton2Clicked = !isButton2Clicked;
+                            });
+                          },
+                          style: ElevatedButton.styleFrom(
+                            primary: isButton2Clicked ? Colors.green : null,
+                          ),
+                          child: Text('Anyama'),
+                        ),
+                      ),
+                    ],
                   ),
                 ),
+                // Container(
+                //   height: 60,
+                //   child: ListView.builder(
+                //     scrollDirection: Axis.horizontal,
+                //     itemCount: colors.length,
+                //     itemBuilder: (context, index) {
+                //       return GestureDetector(
+                //         onTap: () {
+                //           setState(() {
+                //             _selectedColor = index;
+                //           });
+                //         },
+                //         child: AnimatedContainer(
+                //           duration: Duration(milliseconds: 300),
+                //           margin: EdgeInsets.only(right: 10),
+                //           decoration: BoxDecoration(
+                //               color: _selectedColor == index
+                //                   ? colors[index]
+                //                   : colors[index].withOpacity(0.5),
+                //               shape: BoxShape.circle),
+                //           width: 40,
+                //           height: 40,
+                //           child: Center(
+                //             child: _selectedColor == index
+                //                 ? Icon(
+                //                     Icons.check,
+                //                     color: Colors.white,
+                //                   )
+                //                 : Container(),
+                //           ),
+                //         ),
+                //       );
+                //     },
+                //   ),
+                // ),
                 SizedBox(
                   height: 20,
                 ),
                 Text(
-                  'Size',
+                  'Meal Size',
                   style: TextStyle(
                       color: Colors.black,
                       fontSize: 18,
