@@ -34,10 +34,10 @@ class FilterScreen extends StatefulWidget {
 class _FilterScreenState extends State<FilterScreen> {
   bool selected = false;
   final List<ItemModel> _chipsList = [
-    ItemModel("African Dish", Colors.green, false),
-    ItemModel("Lebanese dish", Colors.blueGrey, false),
-    ItemModel("Nigerian dish", Colors.deepOrange, false),
-    ItemModel("Others", Colors.cyan, false),
+    ItemModel("African Dish", Colors.white, false),
+    ItemModel("Lebanese dish", Colors.white, false),
+    ItemModel("Nigerian dish", Colors.white, false),
+    ItemModel("Others", Colors.white, false),
     // ItemModel("React JS", Colors.teal, false),
   ];
 
@@ -109,7 +109,7 @@ class _FilterScreenState extends State<FilterScreen> {
         padding: const EdgeInsets.only(left: 10, right: 5),
         child: FilterChip(
           label: Text(_chipsList[i].label),
-          labelStyle: const TextStyle(color: Colors.white, fontSize: 16),
+          labelStyle: const TextStyle(color: Colors.black, fontSize: 16),
           backgroundColor: _chipsList[i].color,
           selected: _chipsList[i].isSelected,
           onSelected: (bool value) {
