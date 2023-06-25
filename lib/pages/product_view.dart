@@ -1,3 +1,5 @@
+import 'package:share/share.dart';
+
 import '../models/product.dart';
 import 'package:flutter/material.dart';
 
@@ -77,9 +79,9 @@ class _ProductViewPageState extends State<ProductViewPage> {
         SliverList(
             delegate: SliverChildListDelegate([
           Container(
-              height: MediaQuery.of(context).size.height * 0.55,
+              height: MediaQuery.of(context).size.height * 0.90,
               color: Colors.white,
-              padding: EdgeInsets.symmetric(horizontal: 20, vertical: 10),
+              padding: EdgeInsets.symmetric(horizontal: 15, vertical: 10),
               child: Column(
                 crossAxisAlignment: CrossAxisAlignment.start,
                 children: [
@@ -120,7 +122,7 @@ class _ProductViewPageState extends State<ProductViewPage> {
                     height: 20,
                   ),
                   Text(
-                    "Take a break from jeans with the parker long straight pant. These lightweight, pleat front pants feature a flattering high waist and loose, straight legs.",
+                    "Le plat de poulet avec aloco est une combinaison savoureuse de morceaux de poulet grillé ou rôti accompagnés de tranches de bananes plantains frites.",
                     style: TextStyle(
                       height: 1.5,
                       color: Colors.grey.shade800,
@@ -128,50 +130,292 @@ class _ProductViewPageState extends State<ProductViewPage> {
                     ),
                   ),
                   SizedBox(
+                    height: 10,
+                  ),
+                  Container(
+                    child: Row(
+                      mainAxisAlignment: MainAxisAlignment.end,
+                      children: [
+                        Icon(Icons.share_outlined, color: Colors.yellow),
+                        SizedBox(width: 10,),
+                        Text(
+                          "Partager",
+                          style: TextStyle(
+                              height: 1.5,
+                              color: Colors.grey.shade800,
+                              fontSize: 18,
+                              fontWeight: FontWeight.bold),
+                        ),
+                      ],
+                    ),
+                  ),
+
+                  // GestureDetector(
+                  //   onTap: () {
+                  //     Share.share('Content to be shared');
+                  //   },
+                  //   child: Container(
+                  //     child: Row(
+                  //       children: [
+                  //         Icon(Icons.share_outlined, color: Colors.yellow),
+                  //         Text(
+                  //           "Partager",
+                  //           style: TextStyle(
+                  //             height: 1.5,
+                  //             color: Colors.grey.shade800,
+                  //             fontSize: 18,
+                  //             fontWeight: FontWeight.bold,
+                  //           ),
+                  //         ),
+                  //       ],
+                  //     ),
+                  //   ),
+                  // ),
+
+                  SizedBox(
                     height: 30,
                   ),
                   Text(
-                    "Color",
-                    style: TextStyle(color: Colors.grey.shade400, fontSize: 18),
+                    "Vendeurs",
+                    style: TextStyle(color: Colors.green, fontSize: 18),
                   ),
                   SizedBox(
                     height: 10,
                   ),
                   Container(
-                    height: 60,
-                    child: ListView.builder(
-                      scrollDirection: Axis.horizontal,
-                      itemCount: colors.length,
-                      itemBuilder: (context, index) {
-                        return GestureDetector(
-                          onTap: () {
-                            setState(() {
-                              _selectedColor = index;
-                            });
-                          },
-                          child: AnimatedContainer(
-                            duration: Duration(milliseconds: 300),
-                            margin: EdgeInsets.only(right: 10),
-                            decoration: BoxDecoration(
-                                color: _selectedColor == index
-                                    ? colors[index]
-                                    : colors[index].withOpacity(0.5),
-                                shape: BoxShape.circle),
-                            width: 40,
-                            height: 40,
-                            child: Center(
-                              child: _selectedColor == index
-                                  ? Icon(
-                                      Icons.check,
-                                      color: Colors.white,
-                                    )
-                                  : Container(),
+                    child: Row(
+                      children: [
+                        // Expanded(
+                        //   flex: 1,
+                        //   child: Container(
+                        //     child: Image.asset('assets/login_or_signup.jpg'),
+                        //   ),
+                        // ),
+                        Expanded(
+                          flex: 1,
+                          child: Container(
+                            child: ClipRRect(
+                              borderRadius: BorderRadius.circular(10.0),
+                              child: Image.asset('assets/login_or_signup.jpg'),
                             ),
                           ),
-                        );
-                      },
+                        ),
+                        SizedBox(
+                          width: 10,
+                        ),
+                        Expanded(
+                          flex: 2,
+                          child: Container(
+                            padding: EdgeInsets.symmetric(horizontal: 10.0),
+                            child: Column(
+                              crossAxisAlignment: CrossAxisAlignment.start,
+                              children: [
+                                Text(
+                                  'Food ivoire',
+                                  style: TextStyle(
+                                    fontWeight: FontWeight.bold,
+                                    fontSize: 16.0,
+                                  ),
+                                ),
+                                SizedBox(
+                                  height: 10,
+                                ),
+                                Row(
+                                  children: [
+                                    Icon(Icons.star, color: Colors.yellow),
+                                    Icon(Icons.star, color: Colors.yellow),
+                                    Icon(Icons.star, color: Colors.yellow),
+                                    Icon(Icons.star, color: Colors.yellow),
+                                  ],
+                                ),
+                              ],
+                            ),
+                          ),
+                        ),
+                        Expanded(
+                          flex: 1,
+                          child: Container(
+                            child: Row(
+                              children: [
+                                Icon(Icons.location_on),
+                                Text('5km'),
+                              ],
+                            ),
+                          ),
+                        ),
+                      ],
                     ),
                   ),
+                  SizedBox(
+                    height: 10,
+                  ),
+                  Container(
+                    child: Row(
+                      children: [
+                        // Expanded(
+                        //   flex: 1,
+                        //   child: Container(
+                        //     child: Image.asset('assets/login_or_signup.jpg'),
+                        //   ),
+                        // ),
+                        Expanded(
+                          flex: 1,
+                          child: Container(
+                            child: ClipRRect(
+                              borderRadius: BorderRadius.circular(10.0),
+                              child: Image.asset('assets/login_or_signup.jpg'),
+                            ),
+                          ),
+                        ),
+                        SizedBox(
+                          width: 10,
+                        ),
+                        Expanded(
+                          flex: 2,
+                          child: Container(
+                            padding: EdgeInsets.symmetric(horizontal: 10.0),
+                            child: Column(
+                              crossAxisAlignment: CrossAxisAlignment.start,
+                              children: [
+                                Text(
+                                  'Food ivoire',
+                                  style: TextStyle(
+                                    fontWeight: FontWeight.bold,
+                                    fontSize: 16.0,
+                                  ),
+                                ),
+                                SizedBox(
+                                  height: 10,
+                                ),
+                                Row(
+                                  children: [
+                                    Icon(Icons.star, color: Colors.yellow),
+                                    Icon(Icons.star, color: Colors.yellow),
+                                    Icon(Icons.star, color: Colors.yellow),
+                                    Icon(Icons.star, color: Colors.yellow),
+                                  ],
+                                ),
+                              ],
+                            ),
+                          ),
+                        ),
+                        Expanded(
+                          flex: 1,
+                          child: Container(
+                            child: Row(
+                              children: [
+                                Icon(Icons.location_on),
+                                Text('5km'),
+                              ],
+                            ),
+                          ),
+                        ),
+                      ],
+                    ),
+                  ),
+                  SizedBox(
+                    height: 10,
+                  ),
+                  Container(
+                    child: Row(
+                      children: [
+                        // Expanded(
+                        //   flex: 1,
+                        //   child: Container(
+                        //     child: Image.asset('assets/login_or_signup.jpg'),
+                        //   ),
+                        // ),
+                        Expanded(
+                          flex: 1,
+                          child: Container(
+                            child: ClipRRect(
+                              borderRadius: BorderRadius.circular(10.0),
+                              child: Image.asset('assets/login_or_signup.jpg'),
+                            ),
+                          ),
+                        ),
+                        SizedBox(
+                          width: 10,
+                        ),
+                        Expanded(
+                          flex: 2,
+                          child: Container(
+                            padding: EdgeInsets.symmetric(horizontal: 10.0),
+                            child: Column(
+                              crossAxisAlignment: CrossAxisAlignment.start,
+                              children: [
+                                Text(
+                                  'Food ivoire',
+                                  style: TextStyle(
+                                    fontWeight: FontWeight.bold,
+                                    fontSize: 16.0,
+                                  ),
+                                ),
+                                SizedBox(
+                                  height: 10,
+                                ),
+                                Row(
+                                  children: [
+                                    Icon(Icons.star, color: Colors.yellow),
+                                    Icon(Icons.star, color: Colors.yellow),
+                                    Icon(Icons.star, color: Colors.yellow),
+                                    Icon(Icons.star, color: Colors.yellow),
+                                  ],
+                                ),
+                              ],
+                            ),
+                          ),
+                        ),
+                        Expanded(
+                          flex: 1,
+                          child: Container(
+                            child: Row(
+                              children: [
+                                Icon(Icons.location_on),
+                                Text('5km'),
+                              ],
+                            ),
+                          ),
+                        ),
+                      ],
+                    ),
+                  ),
+
+                  // Container(
+                  //   height: 60,
+                  //   child: ListView.builder(
+                  //     scrollDirection: Axis.horizontal,
+                  //     itemCount: colors.length,
+                  //     itemBuilder: (context, index) {
+                  //       return GestureDetector(
+                  //         onTap: () {
+                  //           setState(() {
+                  //             _selectedColor = index;
+                  //           });
+                  //         },
+                  //         child: AnimatedContainer(
+                  //           duration: Duration(milliseconds: 300),
+                  //           margin: EdgeInsets.only(right: 10),
+                  //           decoration: BoxDecoration(
+                  //               color: _selectedColor == index
+                  //                   ? colors[index]
+                  //                   : colors[index].withOpacity(0.5),
+                  //               shape: BoxShape.circle),
+                  //           width: 40,
+                  //           height: 40,
+                  //           child: Center(
+                  //             child: _selectedColor == index
+                  //                 ? Icon(
+                  //                     Icons.check,
+                  //                     color: Colors.white,
+                  //                   )
+                  //                 : Container(),
+                  //           ),
+                  //         ),
+                  //       );
+                  //     },
+                  //   ),
+                  // ),
                   SizedBox(
                     height: 20,
                   ),
@@ -182,43 +426,43 @@ class _ProductViewPageState extends State<ProductViewPage> {
                   SizedBox(
                     height: 10,
                   ),
-                  Container(
-                    height: 60,
-                    child: ListView.builder(
-                      scrollDirection: Axis.horizontal,
-                      itemCount: size.length,
-                      itemBuilder: (context, index) {
-                        return GestureDetector(
-                          onTap: () {
-                            setState(() {
-                              _selectedSize = index;
-                            });
-                          },
-                          child: AnimatedContainer(
-                            duration: Duration(milliseconds: 500),
-                            margin: EdgeInsets.only(right: 10),
-                            decoration: BoxDecoration(
-                                color: _selectedSize == index
-                                    ? Colors.yellow[800]
-                                    : Colors.grey.shade200,
-                                shape: BoxShape.circle),
-                            width: 40,
-                            height: 40,
-                            child: Center(
-                              child: Text(
-                                size[index],
-                                style: TextStyle(
-                                    color: _selectedSize == index
-                                        ? Colors.white
-                                        : Colors.black,
-                                    fontSize: 15),
-                              ),
-                            ),
-                          ),
-                        );
-                      },
-                    ),
-                  ),
+                  // Container(
+                  //   height: 60,
+                  //   child: ListView.builder(
+                  //     scrollDirection: Axis.horizontal,
+                  //     itemCount: size.length,
+                  //     itemBuilder: (context, index) {
+                  //       return GestureDetector(
+                  //         onTap: () {
+                  //           setState(() {
+                  //             _selectedSize = index;
+                  //           });
+                  //         },
+                  //         child: AnimatedContainer(
+                  //           duration: Duration(milliseconds: 500),
+                  //           margin: EdgeInsets.only(right: 10),
+                  //           decoration: BoxDecoration(
+                  //               color: _selectedSize == index
+                  //                   ? Colors.yellow[800]
+                  //                   : Colors.grey.shade200,
+                  //               shape: BoxShape.circle),
+                  //           width: 40,
+                  //           height: 40,
+                  //           child: Center(
+                  //             child: Text(
+                  //               size[index],
+                  //               style: TextStyle(
+                  //                   color: _selectedSize == index
+                  //                       ? Colors.white
+                  //                       : Colors.black,
+                  //                   fontSize: 15),
+                  //             ),
+                  //           ),
+                  //         ),
+                  //       );
+                  //     },
+                  //   ),
+                  // ),
                   SizedBox(
                     height: 20,
                   ),

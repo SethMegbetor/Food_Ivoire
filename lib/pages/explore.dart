@@ -1,5 +1,7 @@
 import 'dart:convert';
 
+import 'package:share/share.dart';
+
 import '../animation/FadeAnimation.dart';
 import '../models/product.dart';
 import './product_view.dart';

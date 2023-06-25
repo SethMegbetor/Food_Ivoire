@@ -43,6 +43,7 @@ dependencies:
   # flashy_tab_bar: ^0.0.3
   flutter_bloc: ^7.0.0
   equatable: ^2.0.0
+  share: ^2.0.1
   # searchable_dropdown: ^1.1.3
 
 dev_dependencies:
